@@ -8,6 +8,19 @@ import numpy as np
 
 
 def historical_normalizer(df):
+    """
+    Normalize the series iterating row by row.
+
+    Parameters
+    ----------
+    df : Pandas Dataframe uni-column
+
+    Returns
+    -------
+    Series: with the normalized series
+    df: Pandas Dataframe with data as index and column of the normalized series
+
+    """
     df_aux = df.copy()
 
     normalized_rows_aux = []
@@ -45,6 +58,19 @@ def historical_normalizer(df):
 
 
 def historical_median(df):
+    """
+    Calculates the historical median iterating row by row
+
+    Parameters
+    ----------
+    df : Pandas Dataframe uni-column
+
+    Returns
+    -------
+    Series: with the historical median
+    df: Pandas Dataframe with data as index and column of the median series
+
+    """
     df_aux = df.copy()
 
     list_median_rows_aux = []
@@ -74,8 +100,10 @@ def macro_indicator(dfs):
     ----------
     dfs : List of macroeconomic data Pandas DataFrame
 
-    Returns ------- df : Pandas DataFrame with dates as index and columns as the normalized series of each macro
-    data, the mean series, the median series, and the signal up (1) and down (0).
+    Returns
+    -------
+    df : Pandas DataFrame with dates as index and columns as: (1) normalized series of each macro
+    data, (2) the mean series, (3) the median series, and (4) the signal up (1) and down (0).
 
     """
 
